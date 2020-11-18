@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 catch (Exception e) {
                     // TODO: handle exception
                 }
-                Intent inte=new Intent(getApplicationContext(),SearchActivity.class);
+                Intent inte=new Intent(getApplicationContext(),MainActivity2.class);
                 startActivity(inte);
                 finish();
             }

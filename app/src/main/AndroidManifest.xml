@@ -9,9 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TicketMaster">
-        <activity android:name="com.project.ticketmaster.DetailsActivity"></activity>
-        <activity android:name="com.project.ticketmaster.SearchActivity" />
-        <activity android:name="com.project.ticketmaster.MainActivity">
+        <activity
+            android:name=".MainActivity2"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/Theme.TicketMaster.NoActionBar"></activity>
+        <activity android:name=".DetailsActivity" />
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
