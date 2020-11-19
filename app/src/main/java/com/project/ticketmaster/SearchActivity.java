@@ -2,6 +2,7 @@ package com.project.ticketmaster;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -26,6 +27,7 @@ public class SearchActivity extends AppCompatActivity {
     ArrayList<String> daArr;
     String status;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +35,11 @@ public class SearchActivity extends AppCompatActivity {
         txtSearchName = findViewById(R.id.txtCityName);
         btnSearch = findViewById(R.id.btnSearch);
         lstResult = findViewById(R.id.list_item);
+
+        pDialog = new ProgressDialog(SearchDataActivity.this);
+        pDialog.setMessage("Please wait...");
+        pDialog.setIndeterminate(true);
+        pDialog.setCancelable(false);
 
         SharedPreferences sharedPreferences = getSharedPreferences("app", Context.MODE_MULTI_PROCESS);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -52,6 +59,7 @@ public class SearchActivity extends AppCompatActivity {
             }
             lstResult.setAdapter(new CostumAdapter(getApplicationContext(), daArr));
         }
+
 
 
         btnSearch.setOnClickListener(new View.OnClickListener() {
