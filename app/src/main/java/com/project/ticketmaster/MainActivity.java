@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     String status;
     DBAdapter obj;
-    ProgressDialog pDialog;
+    ProgressDialog progress_Dialog;
     ArrayList<userdatamodel> dh = new ArrayList<userdatamodel>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
         eventPrice=insertDataBaseData.eventPrice;
         eventCity=insertDataBaseData.eventCity;
 
-        pDialog = new ProgressDialog(MainActivity.this);
-        pDialog.setMessage("Please wait...");
-        pDialog.setIndeterminate(true);
-        pDialog.setCancelable(false);
+        progress_Dialog = new ProgressDialog(MainActivity.this);
+        progress_Dialog.setMessage("Please wait...");
+        progress_Dialog.setIndeterminate(true);
+        progress_Dialog.setCancelable(false);
 
 
         SharedPreferences sharedPreferences = getSharedPreferences("app", Context.MODE_MULTI_PROCESS);
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             editor.apply();
         }
 
-pDialog.show();
+progress_Dialog.show();
         Thread spl=new Thread(){
             public void run(){
                 try{
@@ -75,7 +75,7 @@ pDialog.show();
                 Intent inte=new Intent(getApplicationContext(),MainActivity2.class);
                 startActivity(inte);
                 finish();
-                pDialog.cancel();
+                progress_Dialog.cancel();
             }
         };
         spl.start();
