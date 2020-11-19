@@ -28,7 +28,6 @@ import java.util.ArrayList;
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
-
     EditText txtSearchName;
     Button btnSearch;
     ListView lstResult;
@@ -42,7 +41,7 @@ public class HomeFragment extends Fragment {
         homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-        txtSearchName =root.findViewById(R.id.txtCityName);
+        txtSearchName=root.findViewById(R.id.txtCityName);
         btnSearch = root.findViewById(R.id.btnSearch);
         lstResult = root.findViewById(R.id.list_item);
 
@@ -90,6 +89,8 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
+
+
         return root;
     }
 }
