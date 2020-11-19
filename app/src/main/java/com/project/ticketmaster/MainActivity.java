@@ -2,6 +2,7 @@ package com.project.ticketmaster;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     String status;
     DBAdapter obj;
+    ProgressDialog pDialog;
     ArrayList<userdatamodel> dh = new ArrayList<userdatamodel>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,11 @@ public class MainActivity extends AppCompatActivity {
         eventPrice=insertDataBaseData.eventPrice;
         eventCity=insertDataBaseData.eventCity;
 
+        pDialog = new ProgressDialog(MainActivity.this);
+        pDialog.setMessage("Please wait...");
+        pDialog.setIndeterminate(true);
+        pDialog.setCancelable(false);
+
 
         SharedPreferences sharedPreferences = getSharedPreferences("app", Context.MODE_MULTI_PROCESS);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -54,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             editor.apply();
         }
 
-
+pDialog.show();
         Thread spl=new Thread(){
             public void run(){
                 try{
@@ -68,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent inte=new Intent(getApplicationContext(),MainActivity2.class);
                 startActivity(inte);
                 finish();
+                pDialog.cancel();
             }
         };
         spl.start();

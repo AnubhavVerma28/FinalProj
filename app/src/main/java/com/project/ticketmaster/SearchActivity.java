@@ -28,6 +28,7 @@ public class SearchActivity extends AppCompatActivity {
     String status;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +37,7 @@ public class SearchActivity extends AppCompatActivity {
         btnSearch = findViewById(R.id.btnSearch);
         lstResult = findViewById(R.id.list_item);
 
-        pDialog = new ProgressDialog(SearchDataActivity.this);
-        pDialog.setMessage("Please wait...");
-        pDialog.setIndeterminate(true);
-        pDialog.setCancelable(false);
+
 
         SharedPreferences sharedPreferences = getSharedPreferences("app", Context.MODE_MULTI_PROCESS);
         SharedPreferences.Editor editor = sharedPreferences.edit();
