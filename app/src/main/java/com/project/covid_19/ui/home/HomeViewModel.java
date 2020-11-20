@@ -1,4 +1,4 @@
-package com.project.ticketmaster.ui.home;
+package com.project.covid_19.ui.home;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
