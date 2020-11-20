@@ -1,4 +1,4 @@
-package com.project.ticketmaster;
+package com.project.covid_19;
 
 import android.os.Bundle;
 import android.view.View;
@@ -16,14 +16,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class MainActivity2 extends AppCompatActivity {
+public class NavCovid extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_nav_covid);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -50,7 +50,7 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main_activity2, menu);
+        getMenuInflater().inflate(R.menu.nav_covid, menu);
         return true;
     }
 

@@ -1,13 +1,11 @@
-package com.project.ticketmaster;
+package com.project.covid_19;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -17,20 +15,22 @@ public class CostumAdapter extends BaseAdapter {
 
     private static LayoutInflater inflater = null;
 
-    ArrayList<String> event;
-    ArrayList<String> amountType;
-    ArrayList<String> dec;
+    ArrayList<String> country;
+    ArrayList<String> state;
+    ArrayList<Integer> caseArr;
     Context context;
 
-    public CostumAdapter(Context incomeFragment, ArrayList<String> event) {
+    public CostumAdapter(Context incomeFragment, ArrayList<String> country, ArrayList<String> state, ArrayList<Integer> caseArr) {
         context = incomeFragment;
-        this.event = event;
+        this.country = country;
+        this.state=state;
+        this.caseArr=caseArr;
         inflater = (LayoutInflater) context.getSystemService(LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
     public int getCount() {
-        return event.size();
+        return country.size();
     }
 
     @Override
@@ -47,25 +47,18 @@ public class CostumAdapter extends BaseAdapter {
     public View getView(final int position, View convertView, ViewGroup parent) {
         convertView = inflater.inflate(R.layout.incomeviewlist, null);
         Holder holder = new Holder();
-        holder.tDec = (TextView) convertView.findViewById(R.id.txtLstDec);
-        holder.tDec.setText(event.get(position));
-
-        holder.tDec.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent abc=new Intent(context,DetailsActivity.class);
-                abc.putExtra("Name",holder.tDec.getText());
-                abc.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(abc);
-                Toast.makeText(context,holder.tDec.getText(),Toast.LENGTH_LONG).show();
-            }
-        });
+        holder.txtCountry = (TextView) convertView.findViewById(R.id.txtCountry);
+        holder.txtState=convertView.findViewById(R.id.txtState);
+        holder.txtCase=convertView.findViewById(R.id.txtCase);
+        holder.txtCountry.setText(country.get(position));
+        holder.txtCase.setText(caseArr.get(position)+"");
+        holder.txtState.setText(state.get(position));
 
         return convertView;
     }
 
     class Holder {
-        TextView tAmount, tAmountType, tDec;
+        TextView txtCountry, txtCase,txtState;
 
     }
 }
