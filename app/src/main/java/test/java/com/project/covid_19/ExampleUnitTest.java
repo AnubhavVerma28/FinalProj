@@ -1,4 +1,4 @@
-package com.project.ticketmaster;
+package test.java.com.project.covid_19;
 
 import org.junit.Test;
 

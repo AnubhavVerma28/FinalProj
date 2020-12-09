@@ -1,4 +1,4 @@
-package com.project.ticketmaster;
+package androidTest.java.com.project.covid_19;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.birballega.ticketmaster", appContext.getPackageName());
+        assertEquals("com.lABHPREET.covid_19", appContext.getPackageName());
     }
 }
