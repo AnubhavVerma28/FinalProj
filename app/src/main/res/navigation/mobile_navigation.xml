@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.project.ticketmaster.ui.home.HomeFragment"
+        android:name="com.project.recipesearch.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/rp_fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.project.ticketmaster.ui.gallery.GalleryFragment"
+        android:name="com.project.recipesearch.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/rp_fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.project.ticketmaster.ui.slideshow.SlideshowFragment"
+        android:name="com.project.recipesearch.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/rp_fragment_slideshow" />
 </navigation>
