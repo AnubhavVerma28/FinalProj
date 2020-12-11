@@ -4,12 +4,10 @@
     android:layout_height="match_parent">
 
   <TextView
-      android:id="@+id/tv_recipe_title"
+      android:id="@+id/album"
       android:layout_width="match_parent"
       android:layout_height="51dp"
       android:layout_alignParentTop="true"
-      android:drawableStart="@drawable/arrow"
-      android:drawableLeft="@drawable/arrow"
       android:gravity="center_vertical"
       android:textAppearance="?android:attr/textAppearanceListItemSmall"
       android:textSize="20sp" />

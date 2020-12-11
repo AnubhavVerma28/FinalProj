@@ -7,7 +7,7 @@ import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-import com.finalproject.audio.audio.ArtistModel;
+import com.finalproject.audio.audio.Artist_Model;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,7 +69,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
   // SQLiteDatabase db;
 
-  public int checkIfArtistDataExist(ArtistModel artistModel) {
+  public int checkIfArtistDataExist(Artist_Model artistModel) {
 
     SQLiteDatabase db = this.getReadableDatabase();
 
@@ -110,10 +110,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     db.close();
   }
 
-  public List<ArtistModel> getAllArtistData() {//Get data from database
+  public List<Artist_Model> getAllArtistData() {//Get data from database
 
     SQLiteDatabase db = getWritableDatabase();
-    List<ArtistModel> list = new ArrayList<>();
+    List<Artist_Model> list = new ArrayList<>();
 
     //get all the results from the databse
     Cursor cursor = db.query(TABLE_NAME_ARTIST, ALL_COLS_ARTIST, null, null, null, null, null);
@@ -131,7 +131,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
       final String totalPlay = cursor.getString(cursor.getColumnIndex(COL_TOTAL_PLAY));
 
       //add new object to list
-      list.add(new ArtistModel(id, trackId, album, artist, track, totalListeners, totalPlay));
+      list.add(new Artist_Model(id, trackId, album, artist, track, totalListeners, totalPlay));
     }
     cursor.close();
     db.close();

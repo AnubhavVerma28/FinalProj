@@ -4,10 +4,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".audio.AlbumDetailsActivity">
+    tools:context=".audio.Album_Details_Activity">
 
   <ProgressBar
-      android:id="@+id/progressBarLyrics"
+      android:id="@+id/progressBar"
       style="?android:attr/progressBarStyleHorizontal"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -15,10 +15,10 @@
       android:visibility="invisible" />
 
   <ListView
-      android:id="@+id/lv_album_data"
+      android:id="@+id/album_list"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:layout_below="@+id/progressBarLyrics"
+      android:layout_below="@+id/progressBar"
       android:background="#FFFFFF" />
 
 </RelativeLayout>

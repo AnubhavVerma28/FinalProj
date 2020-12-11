@@ -1,10 +1,7 @@
 <resources>
 
-    <string name="app_name">Audio Final Project</string>
-
-    <string name="str_recipe_search" translatable="false">Recipe Search</string>
-    <string name="str_covid_19" translatable="false">Covid 19</string>
-    <string name="str_audio_search" translatable="false">Audio Search</string>
+    <string name="app_name">The Audio Database api</string>
+    <string name="str_audio_search" translatable="false">The Audio Database</string>
     <string name="str_save">Save</string>
     <string name="str_exit">Exit</string>
     <string name="str_item">Item</string>

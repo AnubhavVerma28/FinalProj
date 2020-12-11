@@ -11,43 +11,44 @@ import com.finalproject.audio.databse.DatabaseHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AlbumSavedActivity extends AppCompatActivity implements
-    ArtistAlbumListAdapter.ArtistAlbumClickListener {
+public class Album_Saved_Activity extends AppCompatActivity implements
+    Artist_AlbumList_Adapter.ArtistAlbumClickListener {
 
-  private ListView lView;
-
-  private List<ArtistModel> allList = new ArrayList<>();
-  private ArtistAlbumListAdapter artistAlbumListAdapter;
+  private ListView listView;
+  private Artist_AlbumList_Adapter artistAlbumListAdapter;
   private DatabaseHelper databaseHelper;
+
+  private List<Artist_Model> allList = new ArrayList<>();
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
+
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_album_details);
 
     databaseHelper = new DatabaseHelper(this);
 
-    lView = findViewById(R.id.lv_album_data);
+    listView = findViewById(R.id.album_list);
 
     allList = databaseHelper.getAllArtistData();
     setAdapter();
   }
 
   private void setAdapter() {
-
     artistAlbumListAdapter =
-        new ArtistAlbumListAdapter(allList, AlbumSavedActivity.this, this, "delete");
-    lView.setAdapter(artistAlbumListAdapter);
+        new Artist_AlbumList_Adapter(allList, Album_Saved_Activity.this, this, "delete");
+    listView.setAdapter(artistAlbumListAdapter);
   }
 
   @Override public void OnClick(int position) {
     deleteData(allList.get(position), position);
   }
 
-  public void deleteData(ArtistModel artistModel, int position) {
-    databaseHelper.deleteArtistEntry(artistModel.getId());//Delete id from Database
-    allList.remove(position);//Remove from list
-    artistAlbumListAdapter.notifyDataSetChanged();//Update Adapter view
+  public void deleteData(Artist_Model artistModel, int position) {
+
+    databaseHelper.deleteArtistEntry(artistModel.getId());
+    allList.remove(position);
+    artistAlbumListAdapter.notifyDataSetChanged();
 
     if (allList.size() == 0) {
       Toast.makeText(this, "Favorite list is empty!!!", Toast.LENGTH_SHORT).show();

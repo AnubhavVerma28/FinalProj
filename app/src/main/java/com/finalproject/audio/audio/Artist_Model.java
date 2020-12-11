@@ -1,6 +1,6 @@
 package com.finalproject.audio.audio;
 
-public class ArtistModel {
+public class Artist_Model {
 
   public String strAlbum;
   public String strArtist;
@@ -52,21 +52,16 @@ public class ArtistModel {
 
   public long id;
 
-  // id, strAlbum, strArtist, ingredients
 
-  /**
-   * Constructor:
-   */
-
-  public ArtistModel(String albumId, String strAlbum, String strArtist) {
+  public Artist_Model(String albumId, String strAlbum, String strArtist) {
     this.albumId = albumId;
     this.strAlbum = strAlbum;
     this.strArtist = strArtist;
   }
 
-  public ArtistModel(long id, String trackId, String strAlbum, String strArtist, String strTrack,
-      String totalListeners,
-      String totalPlays) {
+  public Artist_Model(long id, String trackId, String strAlbum, String strArtist, String strTrack,
+                      String totalListeners,
+                      String totalPlays) {
     this.id = id;
     this.strAlbum = strAlbum;
     this.trackId = trackId;

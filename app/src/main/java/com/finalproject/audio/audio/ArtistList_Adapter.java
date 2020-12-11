@@ -7,22 +7,20 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-
 import com.finalproject.audio.R;
 
 import java.util.List;
 
-public class ArtistListAdapter extends BaseAdapter {
+public class ArtistList_Adapter extends BaseAdapter {
 
-  private final List<ArtistModel> dataList;
   private final Context context;
   private final ArtistClickListener artistClickListener;
+  private final List<Artist_Model> dataList;
 
-  public ArtistListAdapter(List<ArtistModel> dataList, Context context,
-      ArtistClickListener clickListener) {
-    this.dataList = dataList;
+  public ArtistList_Adapter(List<Artist_Model> dataList, Context context, ArtistClickListener clickListener) {
     this.context = context;
     artistClickListener = clickListener;
+    this.dataList = dataList;
   }
 
   public interface ArtistClickListener {
@@ -46,29 +44,22 @@ public class ArtistListAdapter extends BaseAdapter {
 
   @Override
   public View getView(int position, View convertView, ViewGroup parent) {
-    // inflate the layout for each list row
     if (convertView == null) {
       convertView = LayoutInflater.from(context).
           inflate(R.layout.artist_list_item, parent, false);
     }
 
-    // get current item to be displayed
-    ArtistModel artistModel = (ArtistModel) getItem(position);
+    Artist_Model artistModel = (Artist_Model) getItem(position);
 
-    // get the TextView for item name and item description
-    TextView tvRecipeTitle = convertView.findViewById(R.id.tv_recipe_title);
+    TextView albumName = convertView.findViewById(R.id.album);
 
-    //sets the text for item name and item description from the current item object
-    tvRecipeTitle.setText(artistModel.getStrAlbum());
+    albumName.setText((position+1)+". "+artistModel.getStrAlbum());
+    albumName.setTag(position);
 
-    tvRecipeTitle.setTag(position);
-    tvRecipeTitle.setOnClickListener(v -> {
-
+    albumName.setOnClickListener(v -> {
       int pos = (int) v.getTag();
       artistClickListener.OnClick(pos);
     });
-
-    // returns the view for the current row
     return convertView;
   }
 }
