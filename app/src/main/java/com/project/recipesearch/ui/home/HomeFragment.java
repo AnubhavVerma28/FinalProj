@@ -12,19 +12,23 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.android.finalproject.R;
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.project.recipesearch.ContentFiles;
 import com.project.recipesearch.CostumAdapter;
+import com.project.recipesearch.MainActivity2;
+import com.project.recipesearch.R;
 import com.project.recipesearch.SearchActivity;
 
 import org.json.JSONArray;
@@ -49,7 +53,7 @@ public class HomeFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.rp_fragment_home, container, false);
+        View root = inflater.inflate(R.layout.fragment_home, container, false);
         btnSearch = root.findViewById(R.id.btnSearch);
         txtSearch = root.findViewById(R.id.txtSearch);
         listView = root.findViewById(R.id.list_item);

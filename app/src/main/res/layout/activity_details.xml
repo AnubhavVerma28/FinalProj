@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.project.recipesearch.DetailsActivity">
+    tools:context=".DetailsActivity">
 
     <TextView
         android:id="@+id/txtDetTitle"

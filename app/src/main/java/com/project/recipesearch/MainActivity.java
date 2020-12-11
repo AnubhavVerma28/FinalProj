@@ -1,18 +1,16 @@
 package com.project.recipesearch;
 
-import android.content.Intent;
-import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.finalproject.R;
+import android.content.Intent;
+import android.os.Bundle;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.rp_activity_main);
+        setContentView(R.layout.activity_main);
         Thread spl = new Thread() {
             public void run() {
                 try {

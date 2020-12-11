@@ -12,8 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.android.finalproject.R;
-
+import com.project.recipesearch.R;
 
 public class GalleryFragment extends Fragment {
 
@@ -23,7 +22,7 @@ public class GalleryFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         galleryViewModel =
                 new ViewModelProvider(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.rp_fragment_gallery, container, false);
+        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
         final TextView textView = root.findViewById(R.id.text_gallery);
         galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override

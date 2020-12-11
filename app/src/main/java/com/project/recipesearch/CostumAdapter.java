@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.android.finalproject.R;
 
 import java.util.ArrayList;
 
@@ -50,7 +49,7 @@ public class CostumAdapter extends BaseAdapter {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        convertView = inflater.inflate(R.layout.rp_incomeviewlist, null);
+        convertView = inflater.inflate(R.layout.incomeviewlist, null);
         Holder holder = new Holder();
         holder.tDec = (TextView) convertView.findViewById(R.id.txtLstDec);
         holder.ting=convertView.findViewById(R.id.txting);

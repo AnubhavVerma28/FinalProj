@@ -1,5 +1,7 @@
 package com.project.recipesearch;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -12,9 +14,6 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.android.finalproject.R;
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
@@ -39,7 +38,7 @@ public class SearchActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.rp_activity_search);
+        setContentView(R.layout.activity_search);
         btnSearch = findViewById(R.id.btnSearch);
         txtSearch = findViewById(R.id.txtSearch);
         listView = findViewById(R.id.list_item);
